@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   attr_reader :plate
@@ -10,9 +12,12 @@ class Replicator
     connect_to_power
   end
 
+
   def connect_to_power
     @power = @enterprise.reactor.on
   end
+
+  # binding.pry
 
   def replicate(recipe)
     @recipe = recipe
@@ -71,6 +76,7 @@ class Replicator
 
     @enterprise.transporter.energize(obj: glass_in_reactor_core, from: @enterprise.reactor.core, to: @tummy)
 
+    binding.pry
   end
 
   def transport_glass_to_replicator_plate
