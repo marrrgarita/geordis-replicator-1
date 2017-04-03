@@ -16,7 +16,6 @@ class Replicator
   def connect_to_power
     @power = @enterprise.reactor.on
   end
-  binding.pry
 
   def replicate(recipe)
     @recipe = recipe
@@ -40,6 +39,7 @@ class Replicator
 
     @recipe.ingredients.each do |ingredient_name|
       @enterprise.transporter.energize(obj: @enterprise.pantry.find_ingredient(ingredient_name), from: @enterprise.pantry.shelf, to: glass_in_tummy.inside)
+      # binding.pry
     end
   end
 
@@ -75,11 +75,12 @@ class Replicator
 
     @enterprise.transporter.energize(obj: glass_in_reactor_core, from: @enterprise.reactor.core, to: @tummy)
 
+
   end
 
   def transport_glass_to_replicator_plate
-    return
-    @enterprise.transporter.energize(obj: glass_in_tummy, from: @tummy, to: @plate)
+    # binding.pry
+    return @enterprise.transporter.energize(obj: glass_in_tummy, from: @tummy, to: @plate)
   end
 
 end
