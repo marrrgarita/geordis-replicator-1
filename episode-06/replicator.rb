@@ -76,7 +76,7 @@ class Replicator
 
     @enterprise.transporter.energize(obj: glass_in_reactor_core, from: @enterprise.reactor.core, to: @tummy)
 
-    binding.pry
+    # binding.pry
   end
 
   def transport_glass_to_replicator_plate
