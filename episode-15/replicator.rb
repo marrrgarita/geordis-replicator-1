@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   attr_reader :plate
@@ -24,7 +26,7 @@ class Replicator
   end
 
   def retrieve_glass
-    @enterprise.transporter.energize(obj: @enterprise.cupboard.find_glass, from: @enterprise.cupboard.shelf, to: @enterprise.cupboard.shelf)
+    @enterprise.transporter.energize(obj: @enterprise.cupboard.find_glass, from: @enterprise.cupboard.shelf, to: @tummy)
   end
 
   def glass_in_tummy
@@ -36,6 +38,7 @@ class Replicator
 
     @recipe.ingredients.each do |ingredient_name|
       @enterprise.transporter.energize(obj: @enterprise.pantry.find_ingredient(ingredient_name), from: @enterprise.pantry.shelf, to: glass_in_tummy.inside)
+      binding.pry
     end
   end
 

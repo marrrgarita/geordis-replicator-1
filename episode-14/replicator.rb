@@ -37,7 +37,7 @@ class Replicator
 
     @recipe.ingredients.each do |ingredient_name|
       @enterprise.transporter.energize(obj: @enterprise.pantry.find_ingredient(ingredient_name), from: @enterprise.pantry.shelf, to: glass_in_tummy.inside)
-      binding.pry
+      # binding.pry
     end
   end
 
