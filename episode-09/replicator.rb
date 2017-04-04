@@ -1,9 +1,10 @@
+require 'pry'
 class Replicator
 
   attr_reader :plate
 
   def initialize(enterprise)
-    @enterprise  = enterprise
+    @enterprise = enterprise
     @tummy = Location.new
     @plate = Location.new
     @power = false
