@@ -1,3 +1,4 @@
+require 'pry'
 class Replicator
 
   attr_reader :plate
@@ -19,6 +20,7 @@ class Replicator
     retrieve_glass
     transport_ingredients_to_glass
     mix
+    adjust_temperature
     transport_glass_to_replicator_plate
   end
 
@@ -35,6 +37,7 @@ class Replicator
 
     @recipe.ingredients.each do |ingredient_name|
       @enterprise.transporter.energize(obj: @enterprise.pantry.find_ingredient(ingredient_name), from: @enterprise.pantry.shelf, to: glass_in_tummy.inside)
+      binding.pry
     end
   end
 
