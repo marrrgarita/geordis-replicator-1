@@ -12,4 +12,6 @@ class Ingredient
     @name = name
   end
 
+
+
 end

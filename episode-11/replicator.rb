@@ -1,3 +1,4 @@
+require 'pry'
 class Replicator
 
   attr_reader :plate
@@ -12,6 +13,7 @@ class Replicator
 
   def connect_to_power
     @power = @enterprise.reactor.on
+    # binding.pry
   end
 
   def replicate(recipe)
